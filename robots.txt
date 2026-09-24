@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tenkennavi.yokohamakensetsuboukakensa.jp/sitemap.xml
