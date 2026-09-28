@@ -27,8 +27,9 @@
   --shadow: 0 10px 30px rgba(30, 70, 130, .10);
   --shadow-sm: 0 4px 14px rgba(30, 70, 130, .08);
   --maxw: 1100px;
-  --font: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP",
+  --font: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
           "Yu Gothic", "Meiryo", sans-serif;
+  --font-pop: "Mochiy Pop One", "Noto Sans JP", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -181,14 +182,14 @@ a { color: inherit; text-decoration: none; }
   padding: 56px 0 64px;
   overflow: hidden;
 }
-/* 背景イラスト（右寄せ・人物が右に来る） */
+/* 背景イラスト（右寄せ・人物が右に来る／上下いっぱい） */
 .hero::before {
   content: "";
   position: absolute; inset: 0;
   background-image: url("../img/hero-illust.png");
   background-repeat: no-repeat;
   background-position: right center;
-  background-size: contain;
+  background-size: cover;
   z-index: 0;
   pointer-events: none;
 }
@@ -209,40 +210,96 @@ a { color: inherit; text-decoration: none; }
   display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center;
 }
 .hero__visual { display: none; } /* 背景イラストに置き換えたため非表示 */
-.hero__badges { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px; }
-.hero__badge {
-  background:#fff; color: var(--c-blue); font-weight:800; font-size:13px;
-  padding: 6px 14px; border-radius: 999px; box-shadow: var(--shadow-sm);
+/* 上段：リボン＋エリアバッジ */
+.hero__toprow { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:16px; }
+.hero__ribbon {
   display:inline-flex; align-items:center; gap:6px;
+  background: linear-gradient(135deg,var(--c-orange),#ff6a3d);
+  color:#fff; font-weight:900; font-size:13px; letter-spacing:.02em;
+  padding:7px 16px 7px 16px; border-radius:999px;
+  box-shadow: 0 6px 16px rgba(255,106,61,.38);
+  position:relative;
 }
+.hero__ribbon::before { content:"★"; font-size:12px; }
 .hero__area {
-  display:inline-block; background: var(--c-navy); color:#fff;
-  font-weight:800; font-size:14px; padding:6px 16px; border-radius:8px; margin-bottom:16px;
+  display:inline-flex; align-items:center;
+  background: linear-gradient(135deg,var(--c-blue),var(--c-navy));
+  color:#fff; font-weight:900; font-size:14px; padding:7px 18px; border-radius:999px;
+  box-shadow: 0 6px 16px rgba(31,111,214,.35);
 }
+.hero__area::before { content:"📍"; margin-right:4px; }
+
+/* バッジ（カラフル） */
+.hero__badges { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:22px; }
+.hero__badge {
+  color:#fff; font-weight:800; font-size:14px;
+  padding: 8px 16px 8px 14px; border-radius: 999px;
+  display:inline-flex; align-items:center; gap:6px;
+  box-shadow: 0 6px 14px rgba(30,70,130,.18);
+}
+.hero__badge::before { content:"✓"; font-weight:900; font-size:13px;
+  width:19px; height:19px; border-radius:50%; background:rgba(255,255,255,.35);
+  display:inline-flex; align-items:center; justify-content:center; }
+.hero__badge b { font-weight:900; }
+.hero__badge--orange { background: linear-gradient(135deg,#ff9a3d,#ff7a1e); }
+.hero__badge--green  { background: linear-gradient(135deg,#39c06f,#23934f); }
+.hero__badge--blue   { background: linear-gradient(135deg,#3a8ef0,#1f6fd6); }
+
+/* 見出し（大きく・派手に） */
 .hero h1 {
-  font-size: 40px; line-height: 1.35; font-weight: 900; margin: 0 0 18px;
-  letter-spacing: .01em;
+  margin: 0 0 22px; line-height: 1.24; font-weight: 900;
+  letter-spacing: .01em; text-shadow: 0 2px 10px rgba(255,255,255,.7);
 }
-.hero h1 .hl { color: var(--c-blue); }
-.hero h1 .hl-o { color: var(--c-orange); }
-.hero__lead { font-size: 17px; color: var(--c-text-sub); margin: 0 0 26px; }
+.hero__h1-lead { display:inline-block; font-size: 26px; color: var(--c-navy); font-weight:900; }
+.hero__h1-big {
+  display:block; font-family: var(--font-pop);
+  font-size: 58px; line-height:1.1; color: var(--c-blue);
+  letter-spacing:.01em; margin:2px 0;
+  text-shadow: 2px 3px 0 rgba(31,111,214,.14);
+}
+.hero__h1-sub { font-size: 30px; color: var(--c-navy); font-family: var(--font-pop); }
+.hero__h1-line { display:block; font-size: 30px; color: var(--c-navy); font-weight:900; margin-top:4px; }
+.hero__h1-line .hl-o {
+  color:#fff; background: linear-gradient(135deg,var(--c-orange),#ff6a3d);
+  padding:2px 12px; border-radius:8px; box-shadow:0 4px 12px rgba(255,138,30,.4);
+  display:inline-block; -webkit-text-fill-color:#fff;
+}
+.hero__h1-catch {
+  display:block; font-family: var(--font-pop);
+  font-size: 60px; line-height:1.12; margin-top:8px;
+  background: linear-gradient(135deg,#ff7a1e 0%,#ff4d6d 55%,#ff2e88 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: var(--c-orange);
+  filter: drop-shadow(2px 3px 0 rgba(255,90,60,.18));
+}
+.hero__h1-excl { -webkit-text-fill-color:#ff4d6d; color:#ff4d6d; }
+
+/* リード文 */
+.hero__lead { font-size: 16px; color: var(--c-text); margin: 0 0 26px; font-weight:500; }
+.hero__lead b { color: var(--c-blue); font-weight:900; }
+.hero__lead-tags {
+  display:block; margin-bottom:10px; font-weight:900; font-size:15px; color: var(--c-navy);
+}
+.hero__lead-tags em {
+  font-style:normal; color: var(--c-orange); font-weight:900; margin:0 4px;
+}
 .hero__cta { display:flex; flex-wrap:wrap; gap:14px; }
-.hero__note { margin-top: 16px; font-size: 13px; color: var(--c-text-sub); }
-.hero__visual { position: relative; }
-.hero__points {
-  position:absolute; bottom:-18px; left:-10px; right:-10px;
-  display:flex; gap:10px; justify-content:center;
+.hero__cta-main { animation: heroPulse 2.2s ease-in-out infinite; }
+@keyframes heroPulse {
+  0%,100% { box-shadow: 0 8px 20px rgba(255,138,30,.35); }
+  50% { box-shadow: 0 8px 30px rgba(255,138,30,.75); }
 }
-.hero__point {
-  background:#fff; border-radius:12px; box-shadow: var(--shadow-sm);
-  padding:10px 6px; text-align:center; font-size:12px; font-weight:800; flex:1;
-}
-.hero__point b { color: var(--c-orange); display:block; font-size:20px; }
+@media (prefers-reduced-motion: reduce){ .hero__cta-main{ animation:none; } }
+.hero__note { margin-top: 16px; font-size: 13px; color: var(--c-text-sub); font-weight:500; }
 
 @media (max-width: 860px) {
   .hero { padding-bottom: 240px; }
   .hero__grid { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 30px; }
+  .hero__h1-lead { font-size: 20px; }
+  .hero__h1-big { font-size: 40px; }
+  .hero__h1-sub { font-size: 22px; }
+  .hero__h1-line { font-size: 23px; }
+  .hero__h1-catch { font-size: 42px; }
   /* 背景イラストは下部に人物を見せ、上部テキストは白背景で読ませる */
   .hero::before {
     background-position: center bottom;
