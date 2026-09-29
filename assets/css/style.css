@@ -375,6 +375,10 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--c-border);
 }
 .worry__ph { margin: 0 auto 16px; width: 96px; height: 96px; }
+.worry__img {
+  width: 100%; max-width: 210px; height: 150px; object-fit: contain;
+  margin: 0 auto 14px; display: block;
+}
 .worry p { font-weight: 700; margin: 0; font-size: 15px; }
 .worry .q { color: var(--c-orange); font-weight: 900; }
 .worries__arrow { text-align:center; font-size: 40px; color: var(--c-blue); margin: 26px 0 4px; line-height:1; }
