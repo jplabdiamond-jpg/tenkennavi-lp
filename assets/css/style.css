@@ -403,10 +403,14 @@ a { color: inherit; text-decoration: none; }
   transition: transform .15s ease; overflow: hidden;
 }
 .service:hover { transform: translateY(-4px); }
+.service__imgwrap {
+  height: 250px; overflow: hidden; display: block;
+  background: linear-gradient(160deg,#eef5fd,#e2eefb);
+}
 .service__img {
-  width: 100%; height: 250px; object-fit: contain; display: block;
-  background: linear-gradient(160deg,#eef5fd,#e2eefb); padding: 16px;
-  transform: scale(1.3); /* カードのボックスサイズは変えず、画像だけ1.3倍に拡大 */
+  width: 100%; height: 100%; object-fit: contain; display: block;
+  padding: 16px;
+  transform: scale(1.3); /* カードサイズは変えず、画像だけ1.3倍（枠内で完結） */
 }
 .service__body { padding: 22px 26px 28px; }
 .service__no { font-size:12px; font-weight:900; color:var(--c-orange); letter-spacing:.1em; }
