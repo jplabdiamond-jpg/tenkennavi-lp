@@ -406,6 +406,7 @@ a { color: inherit; text-decoration: none; }
 .service__img {
   width: 100%; height: 250px; object-fit: contain; display: block;
   background: linear-gradient(160deg,#eef5fd,#e2eefb); padding: 16px;
+  transform: scale(1.3); /* カードのボックスサイズは変えず、画像だけ1.3倍に拡大 */
 }
 .service__body { padding: 22px 26px 28px; }
 .service__no { font-size:12px; font-weight:900; color:var(--c-orange); letter-spacing:.1em; }
