@@ -222,6 +222,7 @@ a { color: inherit; text-decoration: none; }
 
 /* メインタイトル（チラシ風・単語ごとに大小と色） */
 .hero__title { margin: 0 0 16px; line-height: 1.12; font-family: var(--font-pop); font-weight: 900; }
+.hero__figure { display: none; } /* PCは背景イラストを使うため非表示。モバイルで表示 */
 .ht-row { display:block; }
 .ht-row1 { font-size: 34px; color: var(--c-navy); }
 .ht-box {
@@ -337,30 +338,36 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce){ .hero__stamp{ animation:none; } }
 
 @media (max-width: 860px) {
-  .hero { padding-bottom: 230px; }
-  .hero__grid { grid-template-columns: 1fr; }
-  .hero__eyebrow { font-size: 14px; }
-  .ht-row1 { font-size: 26px; }
-  .ht-row2 { font-size: 46px; }
-  .ht-q { font-size: 52px; }
-  .hero__law { font-size: 15px; }
-  .hero__law-strong { font-size: 17px; }
-  .hero__catch { font-size: 21px; }
-  .hero__catch-big { font-size: 34px; }
+  /* 背景イラストは使わず、実画像を見出し直下に表示 */
+  .hero { padding: 26px 0 36px; }
+  .hero::before, .hero::after { display: none; }
+  .hero__grid { grid-template-columns: 1fr; gap: 0; }
+  .hero__copy { text-align: center; }
+
+  .hero__eyebrow { font-size: 13.5px; justify-content: center; flex-wrap: wrap; margin-bottom: 8px; }
+  .hero__title { margin-bottom: 12px; }
+  .ht-row1 { font-size: 24px; }
+  .ht-row2 { font-size: 40px; }
+  .ht-q { font-size: 46px; }
+
+  /* ファーストビューで見えるイラスト */
+  .hero__figure {
+    display: block; width: 100%; max-width: 440px; margin: 0 auto 16px;
+    border-radius: 16px; background: linear-gradient(160deg,#eaf3fd,#dcecfc);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .hero__law { font-size: 14px; justify-content: center; }
+  .hero__law-strong { font-size: 16px; }
+  .hero__types { justify-content: center; }
+  .hero__catch { font-size: 20px; }
+  .hero__catch-big { font-size: 32px; }
+  .hero__catch-sub { font-size: 13px; }
   .hero__stamp { display: none; } /* モバイルは重なり回避のため非表示（0円はCTAバッジに表示） */
+  .hero__cta { justify-content: center; }
+  .hero__cta .btn { width: 100%; max-width: 440px; }
   .hero__cta-telnum { font-size: 22px; }
-  /* 背景イラストは下部に人物を見せ、上部テキストは白背景で読ませる */
-  .hero::before {
-    background-position: center bottom;
-    background-size: auto 230px;
-  }
-  .hero::after {
-    background: linear-gradient(180deg,
-      rgba(234,243,253,.97) 0%,
-      rgba(234,243,253,.92) 45%,
-      rgba(234,243,253,.55) 72%,
-      rgba(234,243,253,0) 100%);
-  }
+  .hero__note { text-align: center; }
 }
 
 /* ============================================================
