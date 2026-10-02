@@ -440,6 +440,11 @@ a { color: inherit; text-decoration: none; }
   display:flex; align-items:center; justify-content:center; box-shadow: var(--shadow-sm);
 }
 .reason__ph { width: 100%; height: 150px; margin: 14px 0 18px; }
+.reason__img {
+  width: 100%; height: 190px; object-fit: cover; display: block;
+  margin: 14px 0 18px; border-radius: var(--radius-sm);
+  background: linear-gradient(160deg,#eef5fd,#e2eefb);
+}
 .reason h3 { font-size: 20px; margin: 0 0 10px; font-weight: 900; }
 .reason h3 .hl { color: var(--c-blue); }
 .reason p { margin: 0; font-size: 14.5px; color: var(--c-text-sub); }
