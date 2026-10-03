@@ -149,6 +149,7 @@ a { color: inherit; text-decoration: none; }
   display: flex; align-items: center; gap: 16px;
 }
 .header__logo { display: flex; align-items: center; gap: 10px; }
+.header__logo-img { height: 48px; width: auto; display: block; }
 .header__logo-mark {
   width: 40px; height: 40px; border-radius: 11px;
   background: linear-gradient(150deg,var(--c-blue),var(--c-blue-dark));
@@ -651,6 +652,8 @@ a { color: inherit; text-decoration: none; }
 .footer__grid { display:grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 30px; }
 .footer__logo { display:flex; align-items:center; gap:10px; margin-bottom: 14px; }
 .footer__logo b { color:#fff; font-size: 18px; font-weight:900; }
+.footer__logo-badge { background:#fff; border-radius:12px; padding:10px 14px; display:inline-block; }
+.footer__logo-img { height: 46px; width: auto; display: block; }
 .footer__desc { line-height: 1.9; }
 .footer h4 { color:#fff; font-size: 15px; margin: 0 0 12px; }
 .footer ul { list-style:none; padding:0; margin:0; line-height: 2.1; }
