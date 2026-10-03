@@ -166,6 +166,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--c-orange); color:#fff; font-weight: 800;
   padding: 12px 22px; border-radius: 10px; font-size: 15px;
   box-shadow: 0 6px 16px rgba(255,138,30,.35);
+  white-space: nowrap; flex-shrink: 0; /* テキストを折り返さず幅を確保 */
 }
 .header__cta:hover { background: var(--c-orange-dark); }
 .header__nav { display: none; gap: 20px; font-weight: 700; font-size: 14px; }
