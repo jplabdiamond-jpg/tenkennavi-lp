@@ -367,7 +367,7 @@ a { color: inherit; text-decoration: none; }
     display: block;
     background-image: url("../img/hero-mobile.jpg");
     background-size: contain;            /* 切り取らず全体を表示 */
-    background-position: center -40px;   /* 少し上にずらし人物を中央寄りに */
+    background-position: center -100px;  /* さらに上にずらし人物を中央寄りに */
     background-repeat: no-repeat;
   }
   /* 可読性のための白ベール（イラストは透けて見える） */
@@ -392,7 +392,7 @@ a { color: inherit; text-decoration: none; }
   .ht-q { font-size: 35px; }
 
   /* 画像の人物が見えるよう、下側の情報ブロックに余白を確保 */
-  .hero__law { font-size: 14px; justify-content: center; margin-top: 240px; }
+  .hero__law { font-size: 14px; justify-content: center; margin-top: 180px; }
   .hero__law-strong { font-size: 16px; }
   .hero__types { justify-content: center; }
   .hero__catch { font-size: 20px; }
