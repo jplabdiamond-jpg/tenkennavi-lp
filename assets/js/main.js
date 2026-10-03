@@ -23,10 +23,11 @@
     reveals.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  // お悩みカードにスクロールが到達したら集中線バーストを再生
-  var burstList = document.querySelector(".worries__list");
+  // 3つのお悩みカードが全て見えたら集中線バーストを再生
+  var burstCards = document.querySelectorAll(".worries__list .worry");
+  var burstLast = burstCards.length ? burstCards[burstCards.length - 1] : null;
   var burstTarget = document.querySelector(".worries__answer");
-  if ("IntersectionObserver" in window && burstList && burstTarget) {
+  if ("IntersectionObserver" in window && burstLast && burstTarget) {
     var bio = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) {
@@ -34,8 +35,8 @@
           bio.unobserve(e.target);
         }
       });
-    }, { threshold: 0.35 });
-    bio.observe(burstList);
+    }, { threshold: 0.99 });
+    bio.observe(burstLast);
   }
 
   // フォーム送信（送信先未設定のためのプレースホルダー処理）
