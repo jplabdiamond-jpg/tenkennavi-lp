@@ -547,9 +547,14 @@ a { color: inherit; text-decoration: none; }
    施工・対応実績
    ============================================================ */
 .works { display:grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
-.work { text-align:center; }
+.work {
+  text-align:center; background:#fff; border-radius: var(--radius-sm);
+  overflow:hidden; box-shadow: var(--shadow-sm); border:1px solid var(--c-border);
+}
 .work__ph { width:100%; height: 130px; margin-bottom: 8px; }
-.work p { margin:0; font-size: 13px; font-weight: 800; }
+.work__media { width:100%; height: 150px; background:#fff; }
+.work__media img { width:100%; height:100%; object-fit: cover; display:block; }
+.work p { margin:0; font-size: 13px; font-weight: 800; padding: 10px 6px 14px; }
 @media (max-width: 900px){ .works{ grid-template-columns: repeat(2,1fr);} }
 
 /* ============================================================
