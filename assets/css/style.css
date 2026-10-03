@@ -459,7 +459,29 @@ a { color: inherit; text-decoration: none; }
 .worries__arrow { text-align:center; font-size: 40px; color: var(--c-blue); margin: 26px 0 4px; line-height:1; }
 .worries__answer {
   text-align:center; font-size: 32px; font-weight: 900; margin-top: 14px;
-  line-height: 1.7;
+  line-height: 1.7; position: relative;
+}
+.worries__answer-hl { position: relative; z-index: 1; }
+.worries__burst {
+  position: absolute; left: 50%; top: 50%; z-index: 0;
+  width: 860px; height: 484px; pointer-events: none;
+  background: url("../img/burst.png") center / contain no-repeat;
+  opacity: 0; transform: translate(-50%,-50%) scale(.2);
+}
+.worries__answer.is-burst .worries__burst {
+  animation: burstGrow 1s ease-out forwards;
+}
+@keyframes burstGrow {
+  0%   { opacity: 0;   transform: translate(-50%,-50%) scale(.2); }
+  22%  { opacity: 1;   transform: translate(-50%,-50%) scale(.6); }
+  55%  { opacity: .95; transform: translate(-50%,-50%) scale(1); }
+  100% { opacity: 0;   transform: translate(-50%,-50%) scale(1.5); }
+}
+@media (max-width: 760px){
+  .worries__burst { width: 420px; height: 236px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .worries__answer.is-burst .worries__burst { animation: none; opacity: 0; }
 }
 .worries__answer b { color: var(--c-blue); font-size: 38px; }
 .worries__answer-strong { color: var(--c-orange); }

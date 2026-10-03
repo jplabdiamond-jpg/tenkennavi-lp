@@ -23,6 +23,21 @@
     reveals.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
+  // お悩みカードにスクロールが到達したら集中線バーストを再生
+  var burstList = document.querySelector(".worries__list");
+  var burstTarget = document.querySelector(".worries__answer");
+  if ("IntersectionObserver" in window && burstList && burstTarget) {
+    var bio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          burstTarget.classList.add("is-burst");
+          bio.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.35 });
+    bio.observe(burstList);
+  }
+
   // フォーム送信（送信先未設定のためのプレースホルダー処理）
   window.handleSubmit = function (event) {
     event.preventDefault();
