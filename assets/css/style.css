@@ -108,6 +108,7 @@ a { color: inherit; text-decoration: none; }
   background: linear-gradient(transparent 62%, rgba(255,212,59,.7) 62%);
   padding: 0 2px;
 }
+@media (max-width: 760px){ .sec-head__ja { font-size: 24px; } }
 .sec-head__lead { color: var(--c-text-sub); margin-top: 14px; font-size: 15px; }
 .section--blue .sec-head__lead { color: rgba(255,255,255,.9); }
 
