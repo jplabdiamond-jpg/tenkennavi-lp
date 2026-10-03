@@ -175,7 +175,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 900px) {
   .header__tel, .header__logo-txt span { display: none; }
   .header__cta { padding: 10px 14px; font-size: 13px; }
-  .header__logo-img { height: 60px; } /* モバイルもヘッダーを細く */
+  .header__logo-img { height: 90px; margin: -15px 0; } /* 帯の高さは保ちロゴだけ1.5倍 */
 }
 
 /* ============================================================
