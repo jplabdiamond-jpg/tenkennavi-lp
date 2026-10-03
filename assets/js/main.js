@@ -39,19 +39,4 @@
     bio.observe(burstLast);
   }
 
-  // フォーム送信（送信先未設定のためのプレースホルダー処理）
-  window.handleSubmit = function (event) {
-    event.preventDefault();
-    var form = event.target;
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return false;
-    }
-    alert(
-      "【デモ表示】お問い合わせ内容を受け付けました。\n\n" +
-      "※このフォームはまだ送信先が設定されていません。\n" +
-      "実運用時にメール送信またはフォームサービス（例：Cloudflare / フォームメーラー等）との連携設定が必要です。"
-    );
-    return false;
-  };
 })();

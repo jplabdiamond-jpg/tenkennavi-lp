@@ -2,7 +2,7 @@
 ==============================
 
 ■ 公開先（想定）
-  サブドメイン: tenkennavi.yokohamakensetsuboukakensa.jp
+  サブドメイン: inspection.yokohamakensetsuboukakensa.jp
   ルート（/）に index.html が来るように配置してください。
 
 ■ ファイル構成
