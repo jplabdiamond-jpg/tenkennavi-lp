@@ -587,6 +587,14 @@ a { color: inherit; text-decoration: none; }
    ============================================================ */
 .area__grid { display:grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items:center; }
 .area__ph { height: 300px; }
+.area__media {
+  height: 320px; border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow); background:#eaf3fd;
+}
+.area__media img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  display: block; transform: scale(1.12); /* 女性＋パネルをアップで */
+}
 .area h3 { font-size: 22px; font-weight:900; margin: 0 0 14px; }
 .area h3 .hl { color: var(--c-blue); }
 .area__cities { display:flex; flex-wrap:wrap; gap: 10px; margin-bottom: 16px; }
@@ -595,7 +603,7 @@ a { color: inherit; text-decoration: none; }
   padding: 8px 16px; border-radius: 999px; font-size: 14px;
 }
 .area p { color: var(--c-text-sub); font-size: 14.5px; margin: 0; }
-@media (max-width: 760px){ .area__grid{ grid-template-columns:1fr; } .area__ph{height:200px;} }
+@media (max-width: 760px){ .area__grid{ grid-template-columns:1fr; } .area__ph{height:200px;} .area__media{height:240px;} }
 
 /* ============================================================
    FAQ
