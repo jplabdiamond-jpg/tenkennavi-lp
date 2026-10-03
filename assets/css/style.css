@@ -451,10 +451,36 @@ a { color: inherit; text-decoration: none; }
 .worry .q { color: var(--c-orange); font-weight: 900; }
 .worries__arrow { text-align:center; font-size: 40px; color: var(--c-blue); margin: 26px 0 4px; line-height:1; }
 .worries__answer {
-  text-align:center; font-size: 22px; font-weight: 900; margin-top: 6px;
+  text-align:center; font-size: 32px; font-weight: 900; margin-top: 14px;
+  line-height: 1.7;
 }
-.worries__answer b { color: var(--c-blue); font-size: 26px; }
-@media (max-width: 760px){ .worries__list{ grid-template-columns:1fr; } }
+.worries__answer b { color: var(--c-blue); font-size: 38px; }
+.worries__answer-strong { color: var(--c-orange); }
+.worries__answer-hl {
+  display: inline;
+  background-image: linear-gradient(transparent 58%, rgba(255,212,59,.78) 58%);
+  background-repeat: no-repeat;
+  background-position: 0 0.08em;
+  background-size: 0% 100%;
+  padding: 0 .12em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.worries__answer.is-visible .worries__answer-hl {
+  animation: markerSweep 1.1s .3s cubic-bezier(.22,.61,.36,1) forwards;
+}
+@keyframes markerSweep {
+  from { background-size: 0% 100%; }
+  to   { background-size: 100% 100%; }
+}
+@media (prefers-reduced-motion: reduce){
+  .worries__answer.is-visible .worries__answer-hl { animation: none; background-size: 100% 100%; }
+}
+@media (max-width: 760px){
+  .worries__list{ grid-template-columns:1fr; }
+  .worries__answer { font-size: 23px; }
+  .worries__answer b { font-size: 27px; }
+}
 
 /* ============================================================
    サービス（点検の種類）
