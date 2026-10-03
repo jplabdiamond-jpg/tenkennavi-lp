@@ -750,7 +750,8 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 -4px 16px rgba(0,0,0,.08);
 }
 .sticky-cta a { flex:1; text-align:center; padding: 14px; border-radius: 10px; font-weight:900; font-size:15px; }
-.sticky-cta__tel { background: var(--c-green); color:#fff; }
+.sticky-cta__tel { background: var(--c-green); color:#fff; display:flex; align-items:center; justify-content:center; gap:10px; }
+.sticky-cta__icon { width:20px; height:20px; flex-shrink:0; object-fit:contain; }
 .sticky-cta__form { background: var(--c-orange); color:#fff; }
 @media (max-width: 760px){
   .sticky-cta { display:flex; }
