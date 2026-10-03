@@ -504,7 +504,6 @@
         <input type="hidden" name="_subject" value="【建物法定点検ナビ】お問い合わせがありました">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://inspection.yokohamakensetsuboukakensa.jp/thanks.html">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form-row">
           <label for="f-name">お名前<span class="req">必須</span></label>

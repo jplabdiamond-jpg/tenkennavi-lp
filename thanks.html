@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせありがとうございます｜建物法定点検ナビ</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="icon" type="image/png" href="assets/img/favicon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .thanks-wrap {
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 48px 20px; text-align: center;
+    background: linear-gradient(180deg, var(--c-blue-light, #eaf3fd), #fff 70%);
+  }
+  .thanks-logo { height: 64px; width: auto; margin-bottom: 28px; }
+  .thanks-card {
+    background: #fff; border-radius: 20px; box-shadow: 0 16px 40px rgba(18,58,107,.12);
+    border: 1px solid var(--c-border, #e3ecf6);
+    max-width: 620px; width: 100%; padding: 48px 32px 40px;
+  }
+  .thanks-check {
+    width: 76px; height: 76px; margin: 0 auto 20px; border-radius: 50%;
+    background: var(--c-green, #22b573); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px; line-height: 1; box-shadow: 0 8px 18px rgba(34,181,115,.35);
+  }
+  .thanks-card h1 {
+    font-family: var(--font-pop, "Noto Sans JP"); font-weight: 900;
+    font-size: 26px; color: var(--c-navy, #123a6b); margin: 0 0 16px; line-height: 1.4;
+  }
+  .thanks-card p {
+    font-size: 15px; line-height: 1.9; color: var(--c-text, #333); margin: 0 0 10px;
+  }
+  .thanks-tel {
+    margin: 26px 0 4px; padding: 18px; border-radius: 14px;
+    background: var(--c-blue-light, #eaf3fd);
+  }
+  .thanks-tel small { display:block; font-weight: 800; font-size: 13px; color: var(--c-text-sub, #5a6b80); margin-bottom: 4px; }
+  .thanks-tel a { font-size: 28px; font-weight: 900; color: var(--c-navy, #123a6b); text-decoration: none; }
+  .thanks-tel span { display:block; font-size: 12px; color: var(--c-text-sub, #5a6b80); margin-top: 4px; }
+  .thanks-btn {
+    display: inline-block; margin-top: 28px; padding: 15px 40px; border-radius: 999px;
+    background: var(--c-orange, #ff8a1e); color: #fff; font-weight: 900; font-size: 16px;
+    text-decoration: none; box-shadow: 0 10px 22px rgba(255,138,30,.35);
+    transition: transform .15s ease;
+  }
+  .thanks-btn:hover { transform: translateY(-2px); }
+  .thanks-foot { margin-top: 28px; font-size: 12px; color: var(--c-text-sub, #5a6b80); }
+  @media (max-width: 600px){
+    .thanks-card { padding: 36px 20px 32px; }
+    .thanks-card h1 { font-size: 22px; }
+    .thanks-tel a { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+  <main class="thanks-wrap">
+    <img src="assets/img/logo.png" alt="建物法定点検ナビ" class="thanks-logo">
+    <div class="thanks-card">
+      <div class="thanks-check" aria-hidden="true">✓</div>
+      <h1>お問い合わせ<br>ありがとうございます</h1>
+      <p>送信が完了しました。<br>内容を確認のうえ、<strong>通常1〜2営業日以内</strong>に担当者よりご連絡いたします。</p>
+      <p>お急ぎの場合は、お電話でもお気軽にお問い合わせください。</p>
+      <div class="thanks-tel">
+        <small>お電話でのご相談</small>
+        <a href="tel:05054719187">050-5471-9187</a>
+        <span>受付時間：平日 9:00〜18:00（土日祝を除く）</span>
+      </div>
+      <a href="https://inspection.yokohamakensetsuboukakensa.jp/" class="thanks-btn">トップページへ戻る</a>
+    </div>
+    <p class="thanks-foot">建物法定点検ナビ（横浜建設防火検査）／ 東京・横浜・川崎エリア対応</p>
+  </main>
+</body>
+</html>
