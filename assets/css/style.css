@@ -728,6 +728,15 @@ a { color: inherit; text-decoration: none; }
   outline: none; border-color: var(--c-blue); background:#fff;
 }
 .form-row textarea { min-height: 120px; resize: vertical; }
+.form-row input[type="file"] {
+  padding: 11px 12px; border: 1.5px dashed var(--c-blue); background: #f4f9ff; cursor: pointer;
+}
+.form-row input[type="file"]::file-selector-button {
+  font-family: inherit; font-weight: 800; font-size: 13px; color: #fff;
+  background: var(--c-blue); border: none; border-radius: 8px;
+  padding: 8px 14px; margin-right: 12px; cursor: pointer;
+}
+.form-hint { margin: 8px 0 0; font-size: 12.5px; line-height: 1.7; color: var(--c-text-sub); }
 .form__submit { text-align:center; margin-top: 26px; }
 .form__privacy { font-size: 12px; color: var(--c-text-sub); text-align:center; margin-top:14px; }
 .form__note { font-size:12px; color:var(--c-text-sub); margin-top:6px; }
