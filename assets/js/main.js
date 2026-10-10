@@ -39,4 +39,22 @@
     bio.observe(burstLast);
   }
 
+
+  // お問い合わせフォーム: 送信を非表示iframe経由にして、完了後に自前サンクスページへ遷移
+  // （FormSubmitの_nextが効かない環境向け。ファイル添付も通常のmultipart送信のまま動作）
+  var cform = document.querySelector('.contact__box form');
+  if (cform) {
+    var fsFrame = document.createElement('iframe');
+    fsFrame.name = 'fs_target';
+    fsFrame.setAttribute('aria-hidden', 'true');
+    fsFrame.style.display = 'none';
+    document.body.appendChild(fsFrame);
+    var fsSubmitted = false;
+    cform.setAttribute('target', 'fs_target'); // JS有効時のみiframe送信（非対応環境は通常送信にフォールバック）
+    cform.addEventListener('submit', function () { fsSubmitted = true; });
+    fsFrame.addEventListener('load', function () {
+      if (fsSubmitted) { window.location.href = 'thanks.html'; }
+    });
+  }
+
 })();
